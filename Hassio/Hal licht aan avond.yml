@@ -1,0 +1,31 @@
+alias: Hal licht aan avond
+description: 'Schakel 2/3 lampen in, in de hal aan op 30% bij het detecteren van beweging'
+trigger:
+  - type: motion
+    platform: device
+    device_id: 91d522a33a53312d25cc52aca2a00843
+    entity_id: binary_sensor.motion_sensor_edb9
+    domain: binary_sensor
+condition:
+  - condition: and
+    conditions:
+      - condition: time
+        after: '23:00'
+        before: '08:00'
+      - condition: device
+        type: is_off
+        device_id: 981f45936407ba38914aece10b40da50
+        entity_id: light.dimmable_light_1
+        domain: light
+action:
+  - type: turn_on
+    device_id: 981f45936407ba38914aece10b40da50
+    entity_id: light.dimmable_light_1
+    domain: light
+    brightness_pct: 25
+  - type: turn_on
+    device_id: 1e5226a69546bd0d10f62e995288b807
+    entity_id: light.dimmable_light_1_2
+    domain: light
+    brightness_pct: 25
+mode: single

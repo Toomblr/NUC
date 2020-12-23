@@ -1,0 +1,25 @@
+alias: Hal licht uit geen beweging
+description: >-
+  Schakel lichten in hal uit, indien aan, bij het stoppen met detecteren van
+  beweging
+trigger:
+  - type: no_motion
+    platform: device
+    device_id: 91d522a33a53312d25cc52aca2a00843
+    entity_id: binary_sensor.motion_sensor_edb9
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+condition:
+  - condition: device
+    type: is_on
+    device_id: 981f45936407ba38914aece10b40da50
+    entity_id: light.dimmable_light_1
+    domain: light
+action:
+  - service: light.turn_off
+    data: {}
+    entity_id: group.ganglights
+mode: single

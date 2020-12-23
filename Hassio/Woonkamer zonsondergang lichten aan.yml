@@ -1,0 +1,15 @@
+alias: Woonkamer zonsondergang lichten aan
+description: Lichten inschakelen in woonkamer aan 1 uur voor zonsondergang
+trigger:
+  - event: sunset
+    offset: '-01:00:00'
+    platform: sun
+condition:
+  - condition: state
+    entity_id: group.allpersons
+    state: home
+action:
+  - data: {}
+    entity_id: group.woonkamerlights
+    service: light.turn_on
+mode: single

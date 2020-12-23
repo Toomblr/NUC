@@ -1,0 +1,23 @@
+alias: Licht aan thuiskomen Jeske
+description: ''
+trigger:
+  - entity_id: person.jeske_zwetsloot
+    event: enter
+    platform: zone
+    zone: zone.home
+condition:
+  - condition: and
+    conditions:
+      - condition: sun
+        before: sunrise
+        after: sunset
+      - condition: device
+        type: is_off
+        device_id: 67ce3b8663794bffb639a296cfa6a161
+        entity_id: light.hue_go_1
+        domain: light
+action:
+  - data: {}
+    entity_id: group.woonkamerlights
+    service: light.turn_on
+mode: single

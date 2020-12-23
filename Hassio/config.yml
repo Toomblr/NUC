@@ -1,0 +1,43 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+yeelight:
+  devices:
+    192.168.178.50:
+      name: Lightstrip
+    192.168.178.51:
+      name: Stalamp
+    192.168.178.52:
+      name: Desklight
+
+group:
+  allpersons:
+    name: allpersons
+    entities:
+      - person.michiel_mak
+      - person.jeske_zwetsloot
+  woonkamerlights:
+    name: woonkamerlights
+    entities:
+      - light.eettafel_1
+      - light.eettafel_2
+      - light.hue_go_1
+      - light.lightstrip
+      - light.stalamp
+      - light.desklight
+  ganglights:
+    name: ganglights
+    entities:
+      - light.dimmable_light_1
+      - light.dimmable_light_1_2
+      - light.dimmable_light_1_3
