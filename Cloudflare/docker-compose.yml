@@ -1,0 +1,11 @@
+version: '2'
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    restart: unless-stopped
+    environment:
+      - API_KEY=Uey4Cn0-aUJC374WzrX7Vov10TsWS04gWsyFjgmZ
+      - ZONE=makstra.nl
+      - PROXIED=true
+      - PUID=1000
+      - PGID=1000
