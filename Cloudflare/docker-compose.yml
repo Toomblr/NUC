@@ -3,6 +3,8 @@ services:
   cloudflare-ddns:
     image: oznu/cloudflare-ddns:latest
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
     environment:
       - API_KEY=Uey4Cn0-aUJC374WzrX7Vov10TsWS04gWsyFjgmZ
       - ZONE=makstra.nl

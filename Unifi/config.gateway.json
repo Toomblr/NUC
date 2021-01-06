@@ -1,0 +1,37 @@
+{
+   "service": {
+     "nat": {
+         "rule": {
+                "1": {
+                    "description": "Redirect DNS queries to adguard",
+                    "destination": {
+                        "port": "53",
+                        "address": "!192.168.178.3"
+                    },
+                    "inside-address": {
+                        "address": "192.168.178.3",
+                        "port": "53"
+                    },
+                    "source": {
+                        "address": [
+                                   "!192.168.178.3",
+                                   ]
+                    },
+                    "inbound-interface": "eth1",
+                    "protocol": "tcp_udp",
+                    "type": "destination"
+                },
+                "5002": {
+                    "description": "Translate reply back to adguard",
+                    "destination": {
+                        "address": "192.168.178.3",
+                        "port": "53"
+                    },
+                    "outbound-interface": "eth1",
+                    "protocol": "tcp_udp",
+                    "type": "masquerade"
+                }
+            }
+        }
+    }
+}

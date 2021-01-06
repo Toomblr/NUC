@@ -21,4 +21,6 @@ services:
       - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
