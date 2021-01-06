@@ -8,19 +8,19 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Amsterdam
-      - SERVERURL=makstra.ddns.net
-      - SERVERPORT=51820
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - SERVERURL=$SERVERURL
+      - SERVERPORT=$SERVERPORT
       - PEERS=4
-      - PEERDNS=192.168.178.3
-      - INTERNAL_SUBNET=10.13.13.0
+      - PEERDNS=$PEERDNS
+      - INTERNAL_SUBNET=$INTERNAL_SUBNET
     volumes:
       - /wireguard/config:/config
       - /lib/modules:/lib/modules
     ports:
-      - 51820:51820/udp
+      - 51820:$SERVERPORT/udp
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped

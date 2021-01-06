@@ -6,8 +6,8 @@ services:
     security_opt:
       - no-new-privileges:true
     environment:
-      - API_KEY=Uey4Cn0-aUJC374WzrX7Vov10TsWS04gWsyFjgmZ
-      - ZONE=makstra.nl
+      - API_KEY=$API_KEY_CLOUDFLARE
+      - ZONE=$ZONE
       - PROXIED=true
-      - PUID=1000
-      - PGID=1000
+      - PUID=$PUID
+      - PGID=$PGID

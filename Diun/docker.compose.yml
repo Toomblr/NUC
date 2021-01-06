@@ -8,15 +8,15 @@ services:
       - "./data:/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      - "TZ=Europe/Amsterdam"
+      - "TZ=$TZ"
       - "LOG_LEVEL=debug"
       - "LOG_JSON=false"
       - "DIUN_WATCH_WORKERS=20"
       - "DIUN_WATCH_SCHEDULE=0 0 4 * * *"
       - "DIUN_PROVIDERS_DOCKER=true"
       - "DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true"
-      - "DIUN_NOTIF_GOTIFY_ENDPOINT=https://notifications.makstra.nl"
-      - "DIUN_NOTIF_GOTIFY_TOKEN=AoIUcofpp_f7yra"
+      - "DIUN_NOTIF_GOTIFY_ENDPOINT=$GOTIFYURL"
+      - "DIUN_NOTIF_GOTIFY_TOKEN=$GOTIFY_DIUN_TOKEN"
     labels:
       - "diun.enable=true"
       - "diun.watch_repo=true"
