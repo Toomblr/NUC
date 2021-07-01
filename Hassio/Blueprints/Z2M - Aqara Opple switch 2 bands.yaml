@@ -100,7 +100,7 @@ action:
     sequence:
     - service: light.turn_on
       target: 
-        - !input 'light_1', 
+        - !input 'light_1' 
         - !input 'light_2'
       data:
         color_temp: '500'
