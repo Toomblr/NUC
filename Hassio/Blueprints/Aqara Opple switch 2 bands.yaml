@@ -45,30 +45,6 @@ blueprint:
         target:
           entity:
             domain: light
-    button_1_triple:
-      name: Button 1 - triple click
-      description: Action to run on triple click of button 1
-      default: []
-      selector:
-        action: {}
-    button_2_triple:
-      name: Button 2 - triple click
-      description: Action to run on triple click of button 2
-      default: []
-      selector:
-        action: {}
-    button_3_triple:
-      name: Button 3 - triple click
-      description: Action to run on triple click of button 3
-      default: []
-      selector:
-        action: {}
-    button_4_triple:
-      name: Button 4 - triple click
-      description: Action to run on triple click of button 4
-      default: []
-      selector:
-        action: {}
 mode: restart
 max_exceeded: silent
 trigger:
@@ -147,15 +123,3 @@ action:
             - !input 'light_1' 
             - !input 'light_2'
         - delay: '1'
-  - conditions:
-    - '{{ command == ''button_1_triple'' }}'
-    sequence: !input 'button_1_triple'
-  - conditions:
-    - '{{ command == ''button_2_triple'' }}'
-    sequence: !input 'button_2_triple'
-  - conditions:
-    - '{{ command == ''button_3_triple'' }}'
-    sequence: !input 'button_3_triple'
-  - conditions:
-    - '{{ command == ''button_4_triple'' }}'
-    sequence: !input 'button_4_triple'
