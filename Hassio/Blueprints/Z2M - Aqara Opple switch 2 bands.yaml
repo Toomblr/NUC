@@ -84,7 +84,7 @@ action:
     sequence:
     - service: light.toggle
       target: 
-        - !input 'light_1', 
+        - !input 'light_1' 
         - !input 'light_2'
       data: {}
   - conditions:
@@ -93,7 +93,7 @@ action:
     - service: light.toggle
       data: {}
       target: 
-        - !input 'light_1', 
+        - !input 'light_1'
         - !input 'light_2'
   - conditions:
     - '{{ command == ''button_1_double'' }}'
@@ -109,7 +109,7 @@ action:
     sequence:
     - service: light.turn_on
       target: 
-        - !input 'light_1', 
+        - !input 'light_1' 
         - !input 'light_2'
       data:
         color_temp: '153'
@@ -127,7 +127,7 @@ action:
           data:
             brightness_step_pct: -10
           target: 
-            - !input 'light_1', 
+            - !input 'light_1' 
             - !input 'light_2'
         - delay: '1'
   - conditions:
@@ -144,7 +144,7 @@ action:
           data:
             brightness_step_pct: 10
           target: 
-            - !input 'light_1', 
+            - !input 'light_1' 
             - !input 'light_2'
         - delay: '1'
   - conditions:
