@@ -20,7 +20,6 @@ blueprint:
     
     - right double press (buttons 2, 4): set the coldest light (153 mired)
     
-    - triple clicks: customizable
     
       '
   domain: automation
