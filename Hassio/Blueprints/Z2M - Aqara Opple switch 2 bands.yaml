@@ -83,26 +83,34 @@ action:
     - '{{ command == ''button_1_single'' }}'
     sequence:
     - service: light.toggle
-      target: !input 'light_1', !input 'light_2'
+      target: 
+        - !input 'light_1', 
+        - !input 'light_2'
       data: {}
   - conditions:
     - '{{ command == ''button_2_single'' }}'
     sequence:
     - service: light.toggle
       data: {}
-      target: !input 'light_1', !input 'light_2'
+      target: 
+        - !input 'light_1', 
+        - !input 'light_2'
   - conditions:
     - '{{ command == ''button_1_double'' }}'
     sequence:
     - service: light.turn_on
-      target: !input 'light_1', !input 'light_2'
+      target: 
+        - !input 'light_1', 
+        - !input 'light_2'
       data:
         color_temp: '500'
   - conditions:
     - '{{ command == ''button_2_double'' }}'
     sequence:
     - service: light.turn_on
-      target: !input 'light_1', !input 'light_2'
+      target: 
+        - !input 'light_1', 
+        - !input 'light_2'
       data:
         color_temp: '153'
   - conditions:
@@ -118,7 +126,9 @@ action:
         - service: light.turn_on
           data:
             brightness_step_pct: -10
-          target: !input 'light_1', !input 'light_2'
+          target: 
+            - !input 'light_1', 
+            - !input 'light_2'
         - delay: '1'
   - conditions:
     - '{{ command == ''button_4_hold'' }}'
@@ -133,7 +143,9 @@ action:
         - service: light.turn_on
           data:
             brightness_step_pct: 10
-          target: !input 'light_1', !input 'light_2'
+          target: 
+            - !input 'light_1', 
+            - !input 'light_2'
         - delay: '1'
   - conditions:
     - '{{ command == ''button_1_triple'' }}'
